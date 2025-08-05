@@ -1,0 +1,18 @@
+<script>
+    let numeros = new Array(5);
+    let maior;
+
+    for (let i = 0; i < 5; i++) {
+        
+        numeros[i] = Number(prompt(`Digite o ${i + 1}° número:`));
+
+        if (i === 0 || numeros[i] > maior) {
+
+            maior = numeros[i];
+            
+        }
+        
+    }
+
+    alert(`Os números digitados foram: ${numeros}. \nO maior número é: ${maior}`);
+</script>

@@ -1,0 +1,37 @@
+<script>
+    let numeros = new Array(8);
+    let numnegativos = [];
+    let indiceNegativo = -1;
+    let qtdNegativos = 0; 
+
+    for (let i = 0; i < 8; i++) {
+
+        numeros[i] = Number(prompt(`Digite o ${i + 1}° número:`));
+        
+        if (numeros[i] < 0) {
+
+            if (indiceNegativo === -1) {
+
+                indiceNegativo = i; 
+
+            }
+
+            numnegativos[qtdNegativos] = numeros[i];
+
+            qtdNegativos++;
+
+        }
+    }
+
+    if (indiceNegativo !== -1) {
+
+        alert(`O primeiro número negativo está na posição: ${indiceNegativo}`);
+        alert(`Números negativos: [${numnegativos.join(", ")}]`);
+
+    } else {
+
+        alert("Não há elementos negativos.");
+        
+    }
+
+</script>
