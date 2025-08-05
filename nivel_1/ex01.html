@@ -1,0 +1,16 @@
+<script>
+    let numreais = new Array(4);
+    let soma = 0;
+
+    for (let i = 0; i < 4; i++) {
+
+        let numusuario = Number(prompt(`Digite o ${i + 1}°:`));
+        numreais[i] = numusuario;
+        soma += numusuario;
+
+    }
+
+    let media = soma / numreais.length;
+
+    console.log(`Valores digitados: ${numreais}. \nMédia dos números: ${media}`);
+</script>

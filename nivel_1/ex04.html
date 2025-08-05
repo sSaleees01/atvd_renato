@@ -1,0 +1,25 @@
+<script>
+    let numeros = new Array(5);
+
+    for (let i = 0; i < 5; i++) {
+        
+        let valores = Number(prompt(`Digite o ${i + 1}° número:`));
+        numeros[i] = valores;
+
+    }
+
+    let menor = numeros[0]; 
+
+    for (let i = 1; i < numeros.length; i++) {
+
+        if (numeros[i] < menor) {
+
+            menor = vetor[i];
+
+        }
+
+    }
+
+    console.log(`Lista de números: ${numeros}`);
+    console.log(`Menor número: ${menor}`);
+</script>

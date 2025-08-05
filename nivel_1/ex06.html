@@ -1,0 +1,14 @@
+<script>
+    let numeros = new Array(6);
+    let soma = 0;
+
+    for (let i = 0; i < 6; i++) {
+        
+        let numusuario = Number(prompt(`Digite o ${i + 1}°:`));
+        numeros[i] = numusuario;
+        soma += numusuario;
+        
+    }
+    console.log(`Números digitados: ${numeros}.`);
+    console.log(`A soma entre eles: ${soma}.`);
+</script>

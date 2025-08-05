@@ -1,0 +1,18 @@
+<script>
+  let numeros = new Array(6);
+  soma = 0;
+
+  for (let i = 0; i < 6; i++) {
+        
+    numeros[i] = Number(prompt(`Digite o ${i + 1}`));
+        
+  }
+
+  for (let i = 0; i < numeros.length; i += 2) {
+
+    soma += numeros[i];
+
+  }
+
+  alert(`A soma dos elementos nas posições pares é: ${soma}`);
+</script>

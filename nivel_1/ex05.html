@@ -1,0 +1,26 @@
+<script>
+    let numeros = new Array(5);
+    let impares = new Array();
+    let cont = 0;
+
+    for (let i = 0; i < 5; i++) {
+
+        numeros[i] = Number(prompt(`Digite o ${i + 1}° número:`));
+
+    }
+
+    console.log(`O números digitados foram: ${numeros}`);
+
+    for (let i = 0; i < numeros.length; i++) {
+
+        if (numeros[i] % 2 !== 0) {
+
+            impares[cont] = numeros[i];
+            cont++; 
+            
+        }
+        
+    }
+
+    console.log(`Os números ímpares são: ${impares}.`);
+</script>
