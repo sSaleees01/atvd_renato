@@ -1,0 +1,23 @@
+<script>
+    let numeros = new Array(7);
+    let soma = 0;
+
+    for (let i = 0; i < 7; i++) {
+            
+        numeros[i] = Number(prompt(`Digite o ${i + 1}º número:`));
+            
+    }
+
+    for (let i = 0; i < numeros.length; i++) {
+
+        if (i % 2 !== 0) {
+
+            soma += numeros[i];
+            
+        }
+        
+
+    }
+
+    alert(`A soma dos elementos nas posições ímpares é: ${soma}`);
+</script>

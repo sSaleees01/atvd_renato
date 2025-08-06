@@ -1,0 +1,18 @@
+<script>
+    let letras = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+
+    for (let i = 0; i < letras.length; i += 3) {
+       
+        let linha = "";
+        
+        for (let j = i; j < i + 3 && j < letras.length; j++) {
+
+            linha += letras[j] + " ";
+            
+        }
+        
+        console.log(linha);
+
+    }
+
+</script>
