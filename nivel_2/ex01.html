@@ -1,0 +1,25 @@
+<script>
+    let carros = ["Fusca", "Gol", "Civic", "Corolla", "Kwid"];
+    let consumo = [8, 12, 10, 14, 13];
+    let economico = 0;
+
+    for (let i = 1; i < consumo.length; i++) {
+
+        if (consumo[i] > consumo[economico]) {
+            
+            economico = i;
+
+        }
+        
+    }
+
+    alert(`O carro mais econômico é: ${carros[economico]}. \nConsome ${consumo[economico]} km/l.`);
+
+    for (let i = 0; i < carros.length; i++) {
+
+        let litros = 1000 / consumo[i];
+        alert(`${carros[i]} gastaria ${litros.toFixed(2)} L para percorrer 1000 km.`);
+        
+    }
+
+</script>
