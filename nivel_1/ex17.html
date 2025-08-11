@@ -1,0 +1,28 @@
+<script>
+    let numeros = [12, 7, 4, 9, 6, 11];
+    let pares = [];
+    let impares = [];
+    let qtdpar = 0;
+    let qtdimpar = 0;
+
+    for (let i = 0; i < numeros.length; i++) {
+
+        if (numeros[i] % 2 === 0) {
+            
+            pares[qtdpar] = numeros[i];
+            qtdpar ++;
+
+        } else {
+
+            impares[qtdimpar] = numeros[i];
+            qtdimpar++;
+
+        }
+        
+    }
+
+    console.log(`a) Números pares: ${pares}`);
+    console.log(`b) Quantidade de números pares: ${qtdpar}`);
+    console.log(`c) Números ímpares: ${impares}`);
+    console.log(`d) Quantidade de números ímpares: ${qtdimpar}`);
+</script>
