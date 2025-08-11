@@ -1,0 +1,35 @@
+<script>
+    let gabarito = [];
+
+    for (let i = 0; i < 8; i++) {
+        gabarito[i] = prompt(`GABARITO CORRETO (QUESTÃO ${i + 1}:)`).toUpperCase(); 
+    }
+
+    let aprovado = 0;
+    let alunos = 10;
+
+    for (let aluno = 1; aluno <= alunos; aluno++) {
+
+        let numaluno = prompt(`Número do ${aluno}º aluno:`);
+        let resposta = [];
+        let nota = 0;
+
+        for (let j = 0; j < 8; j++) {
+            resposta[j] = prompt(`Aluno ${numaluno} - Resposta da ${j + 1}ª questão:`).toUpperCase();
+
+            if (resposta[j] === gabarito[j]) {
+                nota++;
+            }
+        }
+
+        console.log(`Nota do aluno ${numaluno}: ${nota}.`);
+
+        if (nota >= 6) {
+            aprovado++;
+        }
+    }
+
+    let p_aprov = (aprovado / alunos) * 100;
+
+    console.log(`Porcentagem de aprovação: ${p_aprov.toFixed(2)}%`);
+</script>
