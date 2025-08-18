@@ -1,0 +1,32 @@
+<script>
+    function validarNome(nome) {
+        let partes = nome.trim().split(/\s+/);
+            return partes.length >= 2;
+    }
+
+    function obterSobrenome(nome) {
+        let partes = nome.trim().split(/\s+/);
+        return partes[partes.length - 1].toLowerCase();
+    }
+
+    function contarVogais(nome) {
+        let count = 0;
+        let vogais = "aeiouAEIOU";
+        for (let i = 0; i < nome.length; i++) {
+            if (vogais.indexOf(nome[i]) !== -1) {
+                count++;
+            }
+        }
+        return count.toString().padStart(2, '0'); 
+    }
+
+    let nomeCompleto = prompt("Digite o nome completo do aluno:");
+
+    if (!validarNome(nomeCompleto)) {
+        alert("Nome incompleto!");
+    } else {
+        let senha = obterSobrenome(nomeCompleto) + contarVogais(nomeCompleto);
+        alert("Senha inicial: " + senha);
+    }
+
+</script>

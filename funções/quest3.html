@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Desconto Vacina - Veterinária</title>
+</head>
+<body>
+
+<h2>Veterinária - Calcular desconto da vacina</h2>
+
+<label>Preço da vacina: </label>
+<input type="text" id="precoVacina" /><br><br>
+
+<label>
+    <input type="checkbox" id="temConvenio" onclick="mostrarConvenio()" />
+    Tenho convênio
+</label><br><br>
+
+<div id="opcoesConvenio" style="display:none;">
+    <label><input type="radio" name="convenio" value="amigo" /> Amigo dos Animais (20%)</label><br>
+    <label><input type="radio" name="convenio" value="saude" /> Saúde Animal (50%)</label><br><br>
+</div>
+
+<button onclick="calcular()">Calcular desconto</button>
+
+<p id="resultado"></p>
+
+<script>
+function calcularDesconto(valor, taxa) {
+    return valor * taxa;
+}
+
+function mostrarConvenio() {
+    var checkbox = document.getElementById("temConvenio");
+    var divConvenio = document.getElementById("opcoesConvenio");
+    if (checkbox.checked) {
+        divConvenio.style.display = "block";
+    } else {
+        divConvenio.style.display = "none";
+        // tirar seleção das opções de convênio
+        var radios = document.getElementsByName("convenio");
+        for (var i = 0; i < radios.length; i++) {
+            radios[i].checked = false;
+        }
+    }
+}
+
+function calcular() {
+    var precoText = document.getElementById("precoVacina").value;
+    var preco = parseFloat(precoText);
+
+    if (isNaN(preco) || preco <= 0) {
+        alert("Por favor, digite um preço válido.");
+        return;
+    }
+
+    var temConvenio = document.getElementById("temConvenio").checked;
+    var taxaDesconto = 0.10; // 10% desconto padrão
+
+    if (temConvenio) {
+        var radios = document.getElementsByName("convenio");
+        var convenioEscolhido = "";
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].checked) {
+                convenioEscolhido = radios[i].value;
+            }
+        }
+
+        if (convenioEscolhido === "") {
+            alert("Por favor, selecione um convênio.");
+            return;
+        }
+
+        if (convenioEscolhido === "amigo") {
+            taxaDesconto = 0.20; // 20%
+        } else if (convenioEscolhido === "saude") {
+            taxaDesconto = 0.50; // 50%
+        }
+    }
+
+    var desconto = calcularDesconto(preco, taxaDesconto);
+    var valorPagar = preco - desconto;
+
+    var texto = "Valor do desconto: R$ " + desconto.toFixed(2) + "<br>" +
+                "Valor a pagar: R$ " + valorPagar.toFixed(2);
+
+    document.getElementById("resultado").innerHTML = texto;
+}
+</script>
+
+</body>
+</html>

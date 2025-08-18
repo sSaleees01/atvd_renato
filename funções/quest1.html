@@ -1,0 +1,27 @@
+<script>
+    function retornarTracos(nome) {
+        let tracos = "";
+        for (let i = 0; i < nome.length; i++) {
+            tracos += (nome[i] === " ") ? " " : "-";
+        }
+        return tracos;
+    }
+
+    function categorizarAluno(idade) {
+        if (idade <= 12) {
+            return "infantil";
+        } else if (idade <= 18) {
+            return "juvenil";
+        } else {
+            return "Adulto";
+        }
+    }
+
+    let nome = prompt("Digite o nome do atleta:");
+    let idade = parseInt(prompt("Digite a idade do atleta:"));
+
+    alert(nome);
+    alert(retornarTracos(nome));
+    alert("Categoria: " + categorizarAluno(idade));
+
+</script>
